@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Ridwan">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Welcome Student</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/material-icons.css}">
+    <link rel="stylesheet" th:href="@{/css/toastr.min.css}">
+
+    <style>
+        .bg-light {
+            background-color: #f8f9fa00!important;
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/album.css}" rel="stylesheet">
+</head>
+<body style="width: 1400px;" class="mx-auto">
+<div hidden id="msg" th:if="${message}" th:text="${message}"></div>
+<div hidden id="errMsg" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+<div class="row" style="height: 75vh;">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+		<p class="mx-auto">success</p>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<footer class="blog-footer mt-5">
+    <p>Built by <a>Hamidat</a></p>
+</footer>
+<script th:src="@{/js/jquery-3.4.1.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/toastr.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script>
+    $(document).ready(function(){
+
+        if ($("#msg").text() !== '') {
+            toastr.success(`${$("#msg").text()}`);
+        }
+
+        if ($("#errMsg").text() !== '') {
+            toastr.error(`${$("#errMsg").text()}`);
+        }
+
+    });
+</script>
+</body>
+</html>
